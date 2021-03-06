@@ -1,16 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-button',
   template: `
-    <p>
-      button works!
-    </p>
+    <button class="button">
+      {{ text }}
+    </button>
   `,
-  styles: [
-  ]
+  styleUrls: ['./button.component.scss']
 })
 export class ButtonComponent implements OnInit {
+  @Input() text: string;
 
   constructor() { }
 

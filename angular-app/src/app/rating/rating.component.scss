@@ -1,0 +1,38 @@
+.stars {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+}
+
+.stars input {
+  display: none;
+}
+
+.stars:not(:checked) label {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  background: url("../../assets/icons/star.svg") no-repeat center;
+}
+
+.stars:not(:checked) label:hover {
+  background: url("../../assets/icons/star-checked.svg") no-repeat center;
+}
+
+.stars > input:checked ~ label {
+  background: url("../../assets/icons/star-checked.svg") no-repeat center;
+}
+
+.stars:not(:checked) > label:hover,
+.stars:not(:checked) > label:hover ~ label {
+  background: url("../../assets/icons/star-checked.svg") no-repeat center;
+}
+
+.stars > input:checked + label:hover,
+.stars > input:checked + label:hover ~ label,
+.stars > input:checked ~ label:hover,
+.stars > input:checked ~ label:hover ~ label,
+.stars > label:hover ~ input:checked ~ label {
+  background: url("../../assets/icons/star-checked.svg") no-repeat center;
+}

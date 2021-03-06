@@ -15,4 +15,4 @@ import { BadgeModule } from '../badge/badge.module';
     BadgeModule
   ]
 })
-export class ItemCardModule { }
+export class CardModule { }

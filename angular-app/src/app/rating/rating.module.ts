@@ -6,6 +6,9 @@ import { RatingComponent } from './rating.component';
 
 @NgModule({
   declarations: [RatingComponent],
+  exports: [
+    RatingComponent
+  ],
   imports: [
     CommonModule
   ]

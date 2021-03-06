@@ -1,20 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-rating',
-  template: `
-    <p>
-      rating works!
-    </p>
-  `,
-  styles: [
-  ]
+  templateUrl: './rating.component.html',
+  styleUrls: ['./rating.component.scss']
 })
 export class RatingComponent implements OnInit {
+  @Input() rating: number | undefined;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  isChecked(value: number) : string | null {
+    return this.rating === value ? '' : null;
+  }
 }

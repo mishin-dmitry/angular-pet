@@ -1,0 +1,16 @@
+<div class="card">
+  <div class="card__inner">
+    <app-badge [badge]="product.badge"></app-badge>
+    <figure class="card__image">
+      <img [src]="product.image" alt="Phone image">
+    </figure>
+    <div class="card__company">{{ product.company }}</div>
+    <h2 class="card__title">{{ product.title }}</h2>
+    <app-rating [rating]="product.rating?.value"></app-rating>
+    <div class="card__price">{{ product.price?.value }} &#8381;</div>
+    <div class="card__actions">
+      <app-button text="Добавить в корзину"></app-button>
+      <app-button-icon [isActive]="isFavorite" (click)="onToggleFavorite()"></app-button-icon>
+    </div>
+  </div>
+</div>

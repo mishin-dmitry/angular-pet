@@ -1,18 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { IBadge } from '../types/card';
 
 @Component({
   selector: 'app-badge',
   template: `
-    <p>
-      badge works!
-    </p>
+    <div [style.background-color]="badge?.color" class="badge">
+      {{ badge?.text }}
+    </div>
   `,
-  styles: [
-  ]
+  styleUrls: ['./badge.component.scss']
 })
 export class BadgeComponent implements OnInit {
+  @Input() badge: IBadge | undefined;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
   }

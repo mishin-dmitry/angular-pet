@@ -1,0 +1,19 @@
+.button-icon {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 8px 12px;
+  outline: 0;
+  color: #a3a3a3;
+  transition: color .2s;
+  display: flex;
+}
+
+._active {
+  color: red;
+}
+
+.button-icon:hover {
+  cursor: pointer;
+  color: red;
+}

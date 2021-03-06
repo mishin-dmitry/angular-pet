@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { IProduct } from './types/card';
+import { product } from './data/product.data';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-app';
+  product: IProduct = product;
 }
