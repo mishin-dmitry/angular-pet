@@ -1,0 +1,11 @@
+<button
+  class="button"
+  [ngClass]="[
+    '_theme_' + (this.buttonTheme),
+    '_size_' + (this.buttonSize),
+    this.isActive && '_active'
+  ]"
+  [disabled]="this.isDisabled ? '' : null"
+>
+  {{ text }}
+</button>

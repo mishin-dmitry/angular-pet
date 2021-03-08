@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { IProduct } from '../types/card';
+import { EButtonsColor } from '../button/button.component';
 
 @Component({
   selector: 'app-card',
@@ -13,6 +14,11 @@ export class CardComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
+  }
+
+  // TODO remove
+  get buttonColor(): EButtonsColor {
+    return EButtonsColor.success;
   }
 
   onToggleFavorite(): void {

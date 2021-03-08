@@ -11,7 +11,7 @@ import { IBadge } from '../types/card';
   styleUrls: ['./badge.component.scss']
 })
 export class BadgeComponent implements OnInit {
-  @Input() badge: IBadge | undefined;
+  @Input() badge?: IBadge;
 
   constructor() {}
 
