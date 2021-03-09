@@ -12,6 +12,7 @@ interface IMenuItem {
 })
 export class MenuComponent implements OnInit {
   @Input() menuItems?: Array<IMenuItem>;
+  @Input() isMenuVisible?: boolean;
 
   constructor() { }
 
@@ -23,4 +24,7 @@ export class MenuComponent implements OnInit {
     return this.menuItems?.map((item: IMenuItem) => '<li>${item.caption}</li>') ?? [];
   }
 
+  get isVisible(): boolean {
+    return this.isMenuVisible as boolean;
+  }
 }

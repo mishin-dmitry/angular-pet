@@ -9,13 +9,15 @@ import { RatingModule } from './rating/rating.module';
 import { ButtonModule } from './button/button.module';
 import { ButtonIconComponent } from './button-icon/button-icon.component';
 import { MenuModule } from './menu/menu.module';
+import { DropdownMenuComponent } from './dropdown-menu/dropdown-menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardComponent,
     TooltipWithIconComponent,
-    ButtonIconComponent
+    ButtonIconComponent,
+    DropdownMenuComponent
   ],
   imports: [
     BrowserModule,

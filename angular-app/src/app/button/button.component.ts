@@ -1,13 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-export enum EButtonsColor {
-  danger = 'dangerous',
-  success = 'success',
-  default = 'default',
-  primary = 'primary',
-  warning = 'warning'
-}
-
+type TButtonColor = 'dangerous' | 'default' | 'success' | 'primary' | 'warning';
 type TButtonSize = 'large' | 'default' | 'small';
 
 @Component({
@@ -17,7 +10,7 @@ type TButtonSize = 'large' | 'default' | 'small';
 })
 export class ButtonComponent implements OnInit {
   @Input() text?: string;
-  @Input() color?: EButtonsColor = EButtonsColor.default;
+  @Input() color?: TButtonColor = 'default';
   @Input() size?: TButtonSize = 'default';
   @Input() disabled?: boolean = false;
   @Input() active?: boolean = false;
@@ -27,8 +20,8 @@ export class ButtonComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  get buttonTheme(): EButtonsColor {
-    return this.color as EButtonsColor;
+  get buttonTheme(): TButtonColor {
+    return this.color as TButtonColor;
   }
 
   get buttonSize(): TButtonSize {

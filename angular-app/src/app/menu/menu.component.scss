@@ -5,10 +5,14 @@
   border-radius: 8px;
   padding: 4px 0;
   margin: 0;
-  display: inline-block;
   overflow: hidden;
   min-width: 200px;
+  display: none;
 }
+
+  ._opened {
+    display: inline-block;
+  }
 
 .menu__item {
   padding: 4px 16px;
