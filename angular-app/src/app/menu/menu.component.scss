@@ -1,0 +1,25 @@
+.menu {
+  border: 1px solid #eee;
+  box-sizing: border-box;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, .04), 0 6px 8px rgba(0, 0, 0, .08);
+  border-radius: 8px;
+  padding: 4px 0;
+  margin: 0;
+  display: inline-block;
+  overflow: hidden;
+  min-width: 200px;
+}
+
+.menu__item {
+  padding: 4px 16px;
+  font-size: 16px;
+  line-height: 40px;
+  letter-spacing: -0.0024em;
+  white-space: nowrap;
+  color: #555;
+  cursor: pointer;
+}
+
+.menu__item:hover {
+  background-color: #f7f7f5;
+}

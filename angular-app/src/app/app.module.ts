@@ -8,6 +8,7 @@ import { BadgeModule } from './badge/badge.module';
 import { RatingModule } from './rating/rating.module';
 import { ButtonModule } from './button/button.module';
 import { ButtonIconComponent } from './button-icon/button-icon.component';
+import { MenuModule } from './menu/menu.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ButtonIconComponent } from './button-icon/button-icon.component';
     BrowserModule,
     BadgeModule,
     RatingModule,
-    ButtonModule
+    ButtonModule,
+    MenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
