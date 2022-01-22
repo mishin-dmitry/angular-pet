@@ -1,0 +1,8 @@
+<div class="products">
+  <p *ngIf="!products.length" i18n="empty catalog">Список товаров пуст</p>
+  <ul *ngIf="products.length" class="products_list">
+    <li *ngFor="let product of products" class="products_card">
+      <app-card [product]="product"></app-card>
+    </li>
+  </ul>
+</div>

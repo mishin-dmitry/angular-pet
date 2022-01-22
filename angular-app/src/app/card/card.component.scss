@@ -1,54 +1,63 @@
-$company-color: #8855FF;
+$company-color: #8855ff;
 $margin: 8px;
 
 .card {
   width: 330px;
-  height: 548px;
   background-color: #fff;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, .04), 0 6px 8px rgba(0, 0, 0, .08);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04), 0 6px 8px rgba(0, 0, 0, 0.08);
   border-radius: 8px;
   position: relative;
-}
 
-.card__inner {
-  padding: 24px 24px 36px;
-}
+  &__inner {
+    padding: 24px 24px 36px;
+  }
 
-.card__image {
-  margin: 0 0 32px;
-  height: 250px;
-  width: 100%;
-  text-align: center;
-}
+  &__image {
+    margin: 0 0 32px;
+    height: 250px;
+    width: 100%;
+    text-align: center;
 
-.card__image img {
-  height: 100%;
-}
+    & img {
+      height: 100%;
+    }
+  }
 
-.card__company {
-  color: $company-color;
-  font-size: 14px;
-  line-height: 20px;
-  letter-spacing: -0.0024em;
-  margin-bottom: $margin;
-}
+  &__company {
+    color: $company-color;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.0024em;
+    margin-bottom: $margin;
+  }
 
-.card__title {
-  font-weight: bold;
-  font-size: 24px;
-  line-height: 32px;
-  margin: 0 0 $margin;
-}
+  &__title {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 32px;
+    margin: 0 0 $margin;
+  }
 
-.card__price {
-  font-size: 24px;
-  line-height: 28px;
-  letter-spacing: -0.005em;
-  margin-bottom: 31px;
-}
+  &__price {
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: -0.005em;
+    margin-bottom: 31px;
 
-.card__actions {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    & s {
+      font-size: 18px;
+      color: #9e9b98;
+    }
+
+    &._discount {
+      color: #ff3366;
+      font-weight: 500;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 }

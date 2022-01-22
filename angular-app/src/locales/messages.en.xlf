@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="ru" datatype="plaintext" original="ng2.template">
+    <body>
+    <trans-unit id="8393381357003585" datatype="html">
+        <source> Скидка <x id="INTERPOLATION" equiv-text="{{ discount | percent }}"/> </source>
+        <target> Sale <x id="INTERPOLATION" equiv-text="{{ discount | percent }}"/> </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/card/card.component.html</context>
+          <context context-type="linenumber">4,7</context>
+        </context-group>
+        <note priority="1" from="description">sale</note>
+      </trans-unit>
+    <trans-unit id="4125906382033983478" datatype="html">
+        <source>Добавить в корзину</source>
+        <target>Add</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/card/card.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8049137575815419464" datatype="html">
+        <source>Список товаров пуст</source>
+        <target>Product list is empty</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/catalog/catalog.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">empty catalog</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

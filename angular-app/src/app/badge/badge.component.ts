@@ -1,21 +1,14 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { IBadge } from '../types/card';
 
 @Component({
   selector: 'app-badge',
-  template: `
-    <div [style.background-color]="badge?.color" class="badge">
-      {{ badge?.text }}
-    </div>
-  `,
-  styleUrls: ['./badge.component.scss']
+  template: ` <div class="badge"><ng-content></ng-content></div> `,
+  styleUrls: ['./badge.component.scss'],
 })
 export class BadgeComponent implements OnInit {
-  @Input() badge?: IBadge;
+  @Input() text: string;
 
   constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

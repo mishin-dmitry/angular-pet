@@ -10,6 +10,7 @@ import { ButtonModule } from './button/button.module';
 import { ButtonIconComponent } from './button-icon/button-icon.component';
 import { MenuModule } from './menu/menu.module';
 import { DropdownMenuComponent } from './dropdown-menu/dropdown-menu.component';
+import { CatalogComponent } from './catalog/catalog.component';
 
 @NgModule({
   declarations: [
@@ -17,16 +18,11 @@ import { DropdownMenuComponent } from './dropdown-menu/dropdown-menu.component';
     CardComponent,
     TooltipWithIconComponent,
     ButtonIconComponent,
-    DropdownMenuComponent
+    DropdownMenuComponent,
+    CatalogComponent,
   ],
-  imports: [
-    BrowserModule,
-    BadgeModule,
-    RatingModule,
-    ButtonModule,
-    MenuModule
-  ],
+  imports: [BrowserModule, BadgeModule, RatingModule, ButtonModule, MenuModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

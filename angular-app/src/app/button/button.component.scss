@@ -10,68 +10,69 @@ $warning-color: #e0a800;
   letter-spacing: -0.0024em;
   padding: 12px 20px;
   outline: 0;
-  transition: background-color .2s, color .2s;
+  transition: background-color 0.2s, color 0.2s;
   cursor: pointer;
+  min-width: 200px;
 }
-  // BUTTON THEMES
-  ._theme_default {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    color: #555;
-  }
+// BUTTON THEMES
+._theme_default {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  color: #555;
+}
 
-  :not(._active):hover {
-    color: #fff;
-    background-color: #09f;
-    border-color: #09f;
-  }
+:not(._active):hover {
+  color: #fff;
+  background-color: #09f;
+  border-color: #09f;
+}
 
-  ._theme_dangerous {
-    background-color: $dangerous-color;
-    border: 1px solid $dangerous-color;
-    color: #fff;
-  }
+._theme_dangerous {
+  background-color: $dangerous-color;
+  border: 1px solid $dangerous-color;
+  color: #fff;
+}
 
-  ._theme_success {
-    background-color: $success-color;
-    border: 1px solid $success-color;
-    color: #fff;
-  }
+._theme_success {
+  background-color: $success-color;
+  border: 1px solid $success-color;
+  color: #fff;
+}
 
-  ._theme_primary {
-    background-color: $primary-color;
-    border: 1px solid $primary-color;
-    color: #fff;
-  }
+._theme_primary {
+  background-color: $primary-color;
+  border: 1px solid $primary-color;
+  color: #fff;
+}
 
-  ._theme_warning {
-    background-color: $warning-color;
-    border: 1px solid $warning-color;
-    color: #555;
-  }
+._theme_warning {
+  background-color: $warning-color;
+  border: 1px solid $warning-color;
+  color: #555;
+}
 
-  :not(._active):hover {
-    opacity: .8;
-  }
+:not(._active):hover {
+  opacity: 0.8;
+}
 
-  // BUTTON SIZES
-  ._size_default {
-    padding: 12px 20px;
-  }
+// BUTTON SIZES
+._size_default {
+  padding: 12px 20px;
+}
 
-  ._size_large {
-    padding: 15px 23px;
-  }
+._size_large {
+  padding: 15px 23px;
+}
 
-  ._size_small {
-    padding: 9px 17px;
-  }
+._size_small {
+  padding: 9px 17px;
+}
 
-  ._disabled {
-    pointer-events: none;
-    opacity: .5;
-  }
+._disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
 
-  ._active {
-    cursor: default;
-  }
+._active {
+  cursor: default;
+}

@@ -1,11 +1,11 @@
 export interface IProduct {
-  id?: number;
-  company?: string;
-  title?: string;
-  image?: string;
-  rating?: IRating;
-  price?: IPrice;
-  deliveryOptions?: IDeliveryOptions;
+  id: number;
+  company: string;
+  title: string;
+  image: string;
+  rating: IRating;
+  price: IPriceGroups;
+  deliveryOptions: IDeliveryOptions;
   badge?: IBadge;
   colors?: IColors;
 }
@@ -15,14 +15,19 @@ export interface IRating {
   reviews: number;
 }
 
-interface IPrice {
+interface IPriceGroups {
+  [key: string]: IPrice;
+}
+
+export interface IPrice {
   value: number;
-  discount: number;
+  code: string;
+  discount?: number;
 }
 
 interface IDeliveryOptions {
-  delivery: string;
-  postamate: boolean;
+  delivery?: string;
+  postamate?: boolean;
   available: number;
 }
 
@@ -38,5 +43,5 @@ interface IColors {
 
 interface IColorValue {
   color: string;
-  image: string
+  image: string;
 }
