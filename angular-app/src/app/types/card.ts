@@ -8,6 +8,7 @@ export interface IProduct {
   deliveryOptions: IDeliveryOptions;
   badge?: IBadge;
   colors?: IColors;
+  sale: boolean;
 }
 
 export interface IRating {

@@ -22,7 +22,11 @@
       <s> {{ price }} </s>
     </div>
     <div class="card__actions">
-      <app-button i18n-text text="Добавить в корзину"></app-button>
+      <app-button
+        i18n-text
+        text="Добавить в корзину"
+        (clicked)="addProductInCart(product)"
+      ></app-button>
       <app-button-icon
         [isActive]="isFavorite"
         (click)="onToggleFavorite()"

@@ -9,6 +9,8 @@ import { getLocaleId, getCurrencySymbol } from '@angular/common';
 })
 export class CardComponent implements OnInit {
   @Input() product: IProduct;
+  @Input() addProductInCart: (product: IProduct) => void;
+
   isFavorite = false;
   currentLocale = getLocaleId(this.locale);
 
@@ -31,7 +33,6 @@ export class CardComponent implements OnInit {
   }
 
   get currency(): string {
-    console.log(this.currentLocale);
     return getCurrencySymbol(this.currencyCode, 'narrow');
   }
 

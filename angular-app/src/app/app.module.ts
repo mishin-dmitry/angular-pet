@@ -1,3 +1,5 @@
+import { ToggleComponent } from './toggle/toggle.component';
+import { ToggleModule } from './toggle/toggle.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -11,6 +13,7 @@ import { ButtonIconComponent } from './button-icon/button-icon.component';
 import { MenuModule } from './menu/menu.module';
 import { DropdownMenuComponent } from './dropdown-menu/dropdown-menu.component';
 import { CatalogComponent } from './catalog/catalog.component';
+import { CatalogModule } from './catalog/catalog.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,15 @@ import { CatalogComponent } from './catalog/catalog.component';
     DropdownMenuComponent,
     CatalogComponent,
   ],
-  imports: [BrowserModule, BadgeModule, RatingModule, ButtonModule, MenuModule],
+  imports: [
+    BrowserModule,
+    BadgeModule,
+    RatingModule,
+    ButtonModule,
+    MenuModule,
+    CatalogModule,
+    ToggleModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

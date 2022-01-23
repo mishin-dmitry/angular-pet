@@ -5,6 +5,7 @@ export const products: Array<IProduct> = [
     id: 1,
     company: 'Google',
     title: 'Google Pixel 4 XL 64GB',
+    sale: true,
     image:
       'https://avatars.mds.yandex.net/get-mpic/1545401/img_id3166910857140137379.jpeg/13hq',
     rating: {
@@ -45,6 +46,7 @@ export const products: Array<IProduct> = [
     id: 2,
     company: 'Samsung',
     title: 'Samsung Galaxy A12 (SM-A127) 3/32 ГБ RU',
+    sale: true,
     image:
       'https://avatars.mds.yandex.net/get-mpic/5252277/img_id5748147289415498213.png/orig',
     rating: {
@@ -87,6 +89,7 @@ export const products: Array<IProduct> = [
     title: 'Xiaomi Redmi 9 NFC 4/64 ГБ Global',
     image:
       'https://avatars.mds.yandex.net/get-mpic/5131700/img_id5347563295793030043.jpeg/orig',
+    sale: false,
     rating: {
       value: 4,
       reviews: 3,
@@ -121,6 +124,7 @@ export const products: Array<IProduct> = [
     id: 4,
     company: 'Apple',
     title: 'Apple iPhone 12 mini 64 ГБ',
+    sale: true,
     image:
       'https://avatars.mds.yandex.net/get-mpic/5235242/img_id7846111945445038544.png/orig',
     rating: {

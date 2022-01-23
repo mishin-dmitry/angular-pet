@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 type TButtonColor = 'dangerous' | 'default' | 'success' | 'primary' | 'warning';
 type TButtonSize = 'large' | 'default' | 'small';
@@ -6,7 +6,7 @@ type TButtonSize = 'large' | 'default' | 'small';
 @Component({
   selector: 'app-button',
   templateUrl: './button.component.html',
-  styleUrls: ['./button.component.scss']
+  styleUrls: ['./button.component.scss'],
 })
 export class ButtonComponent implements OnInit {
   @Input() text?: string;
@@ -14,10 +14,14 @@ export class ButtonComponent implements OnInit {
   @Input() size?: TButtonSize = 'default';
   @Input() disabled?: boolean = false;
   @Input() active?: boolean = false;
+  @Output() clicked: EventEmitter<MouseEvent> = new EventEmitter();
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  public click(): void {
+    this.clicked.emit();
   }
 
   get buttonTheme(): TButtonColor {

@@ -1,0 +1,18 @@
+.toggle-item {
+  padding: 10px 15px;
+  border: 1px solid rgb(231, 232, 236);
+  border-radius: 5px;
+  cursor: pointer;
+  transition-property: "background-color";
+  transition-duration: 0.2s;
+
+  &:hover {
+    background-color: rgba(176, 180, 194, 0.05);
+  }
+
+  &._selected {
+    background-color: #f7f7f7;
+    pointer-events: none;
+    cursor: default;
+  }
+}

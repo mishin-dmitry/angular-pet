@@ -1,0 +1,12 @@
+<div>
+  <ul class="toggle">
+    <li *ngFor="let option of options">
+      <app-toggle-item
+        [value]="option.value"
+        [caption]="option.caption"
+        [isSelected]="currentValue?.value === option.value"
+        (clicked)="onChange(option)"
+      ></app-toggle-item>
+    </li>
+  </ul>
+</div>
