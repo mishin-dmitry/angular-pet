@@ -1,4 +1,5 @@
 import {
+  ChangeDetectionStrategy,
   Component,
   Input,
   OnChanges,
@@ -15,6 +16,7 @@ export interface IToggleItem {
   selector: 'app-toggle',
   templateUrl: './toggle.component.html',
   styleUrls: ['./toggle.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ToggleComponent implements OnInit, OnChanges {
   @Input() options: IToggleItem[];

@@ -1,4 +1,11 @@
-import { Component, Inject, Input, LOCALE_ID, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Inject,
+  Input,
+  LOCALE_ID,
+  OnInit,
+} from '@angular/core';
 import { IProduct, IPrice } from '../types/card';
 import { getLocaleId, getCurrencySymbol } from '@angular/common';
 
@@ -6,6 +13,7 @@ import { getLocaleId, getCurrencySymbol } from '@angular/common';
   selector: 'app-card',
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CardComponent implements OnInit {
   @Input() product: IProduct;
@@ -18,7 +26,9 @@ export class CardComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  onToggleFavorite(): void {
+  onToggleFavorite(event: MouseEvent): void {
+    event.stopPropagation();
+
     this.isFavorite = !this.isFavorite;
   }
 

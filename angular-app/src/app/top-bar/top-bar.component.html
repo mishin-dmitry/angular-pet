@@ -1,0 +1,17 @@
+<header class="header">
+  <nav class="menu">
+    <ul class="menu__list">
+      <li
+        *ngFor="let item of this.navMenuLinks; first as isRoot"
+        class="menu__item"
+      >
+        <a
+          routerLink="{{ item.url }}"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: isRoot }"
+          >{{ item.caption }}</a
+        >
+      </li>
+    </ul>
+  </nav>
+</header>

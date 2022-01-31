@@ -1,4 +1,11 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  Output,
+  EventEmitter,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 
 type TButtonColor = 'dangerous' | 'default' | 'success' | 'primary' | 'warning';
 type TButtonSize = 'large' | 'default' | 'small';
@@ -7,6 +14,7 @@ type TButtonSize = 'large' | 'default' | 'small';
   selector: 'app-button',
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ButtonComponent implements OnInit {
   @Input() text?: string;
@@ -20,8 +28,9 @@ export class ButtonComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  public click(): void {
-    this.clicked.emit();
+  public click(event: MouseEvent): void {
+    event.stopPropagation();
+    this.clicked.emit(event);
   }
 
   get buttonTheme(): TButtonColor {

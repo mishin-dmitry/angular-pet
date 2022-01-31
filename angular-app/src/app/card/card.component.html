@@ -1,4 +1,4 @@
-<div class="card">
+<a class="card">
   <div class="card__inner">
     <app-badge *ngIf="discount">
       <span i18n="sale">
@@ -29,8 +29,8 @@
       ></app-button>
       <app-button-icon
         [isActive]="isFavorite"
-        (click)="onToggleFavorite()"
+        (click)="onToggleFavorite($event)"
       ></app-button-icon>
     </div>
   </div>
-</div>
+</a>

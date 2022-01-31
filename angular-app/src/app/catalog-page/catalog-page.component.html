@@ -12,6 +12,7 @@
       <app-card
         [product]="product"
         [addProductInCart]="addProductInCart"
+        [routerLink]="['/catalog', product.id]"
       ></app-card>
     </li>
   </ul>

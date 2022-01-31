@@ -1,9 +1,17 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
 
 @Component({
   selector: 'app-dropdown-menu',
   templateUrl: './dropdown-menu.component.html',
-  styleUrls: ['./dropdown-menu.component.scss']
+  styleUrls: ['./dropdown-menu.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DropdownMenuComponent implements OnInit, OnChanges {
   @Input() isOpen?: boolean;
@@ -14,8 +22,7 @@ export class DropdownMenuComponent implements OnInit, OnChanges {
     this._isDropdownOpened = this.isOpen ?? false;
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   ngOnChanges(changes: SimpleChanges) {
     this._isDropdownOpened = this.isOpen as boolean;
@@ -28,5 +35,4 @@ export class DropdownMenuComponent implements OnInit, OnChanges {
   onButtonClick(e: MouseEvent): void {
     this._isDropdownOpened = !this._isDropdownOpened;
   }
-
 }

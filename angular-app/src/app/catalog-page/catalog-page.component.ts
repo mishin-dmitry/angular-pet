@@ -1,10 +1,12 @@
-import { IToggleItem } from './../toggle/toggle.component';
+import { ActivatedRoute, Router } from '@angular/router';
+import { products } from './product.data';
+import { IToggleItem } from '../toggle/toggle.component';
 import {
   Component,
   OnInit,
-  Input,
   OnChanges,
   SimpleChanges,
+  ChangeDetectionStrategy,
 } from '@angular/core';
 import { IProduct } from '../types/card';
 
@@ -13,31 +15,32 @@ interface CartProduct {
   product: IProduct;
 }
 
-const SHOW_ALL = 0;
-const AVAILABLE = 1;
-const SALE = 2;
+enum filterOptions {
+  SHOW_ALL,
+  AVAILABLE,
+  SALE,
+}
 
 @Component({
   selector: 'app-catalog',
-  templateUrl: './catalog.component.html',
-  styleUrls: ['./catalog.component.scss'],
+  templateUrl: './catalog-page.component.html',
+  styleUrls: ['./catalog-page.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CatalogComponent implements OnInit, OnChanges {
-  @Input() products: IProduct[];
-
+export class CatalogPageComponent implements OnInit, OnChanges {
   inCart: CartProduct[];
 
   filterOptions: IToggleItem[] = [
     {
-      value: SHOW_ALL,
+      value: filterOptions.SHOW_ALL,
       caption: 'Показать все',
     },
     {
-      value: AVAILABLE,
+      value: filterOptions.AVAILABLE,
       caption: 'В наличии',
     },
     {
-      value: SALE,
+      value: filterOptions.SALE,
       caption: 'Со скидкой',
     },
   ];
@@ -46,16 +49,25 @@ export class CatalogComponent implements OnInit, OnChanges {
 
   private __activeFilter: IToggleItem;
 
-  constructor() {
+  constructor(private route: ActivatedRoute, private router: Router) {
     this.inCart = [];
-    this.filteredProducts = this.products || [];
+    this.filteredProducts = products || [];
     this.__activeFilter = this.filterOptions[0];
 
     this.addProductInCart = this.addProductInCart.bind(this);
     this.changeFilter = this.changeFilter.bind(this);
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    const filterId = this.route.snapshot.queryParams['filter'];
+    const activeFilter = this.filterOptions.filter(
+      (filter) => filter.value === +filterId
+    )[0];
+
+    if (activeFilter && this.__activeFilter !== activeFilter) {
+      this.changeFilter(activeFilter);
+    }
+  }
 
   ngOnChanges({ products }: SimpleChanges): void {
     if (products.currentValue !== this.filteredProducts) {
@@ -79,9 +91,6 @@ export class CatalogComponent implements OnInit, OnChanges {
     } else {
       productFromCart.count += 1;
     }
-
-    // TODO remove, show that products add in cart
-    console.log(this.inCart);
   }
 
   get activeFilter(): IToggleItem {
@@ -89,21 +98,25 @@ export class CatalogComponent implements OnInit, OnChanges {
   }
 
   public changeFilter(newValue: IToggleItem) {
+    this.router.navigate(['/catalog'], {
+      queryParams: { filter: newValue.value },
+    });
+
     this.__activeFilter = newValue;
 
     switch (newValue.value) {
-      case SHOW_ALL:
-        this.filteredProducts = this.products;
+      case filterOptions.SHOW_ALL:
+        this.filteredProducts = products;
         break;
 
-      case AVAILABLE:
-        this.filteredProducts = this.products.filter(
+      case filterOptions.AVAILABLE:
+        this.filteredProducts = products.filter(
           (product: IProduct) => product.deliveryOptions.available
         );
         break;
 
-      case SALE:
-        this.filteredProducts = this.products.filter(
+      case filterOptions.SALE:
+        this.filteredProducts = products.filter(
           (product: IProduct) => product.sale
         );
         break;

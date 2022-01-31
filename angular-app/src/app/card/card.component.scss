@@ -7,6 +7,20 @@ $margin: 8px;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04), 0 6px 8px rgba(0, 0, 0, 0.08);
   border-radius: 8px;
   position: relative;
+  display: block;
+  cursor: pointer;
+  transition-property: box-shadow;
+  transition-duration: 0.2s;
+
+  &:hover {
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08), 0 6px 8px rgba(0, 0, 0, 0.12);
+
+    .card {
+      &__title {
+        color: #007bff;
+      }
+    }
+  }
 
   &__inner {
     padding: 24px 24px 36px;
@@ -36,6 +50,8 @@ $margin: 8px;
     font-size: 24px;
     line-height: 32px;
     margin: 0 0 $margin;
+    transition-property: color;
+    transition-duration: 0.2s;
   }
 
   &__price {

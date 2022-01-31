@@ -6,7 +6,7 @@
     this.isActive ? '_active' : ''
   ]"
   [disabled]="this.isDisabled ? '' : null"
-  (click)="click()"
+  (click)="click($event)"
 >
   {{ text }}
 </button>
